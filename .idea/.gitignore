@@ -1,3 +1,104 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+# Arquivo de propriedades locais (contém chaves como ADMOB_APP_ID, etc)
+local.properties
+
+# Diretórios de build
+/build/
+/*/build/
+
+# Cache do Gradle
+.gradle/
+/**/.gradle/
+
+# Arquivos de log e debug
+*.log
+
+# Configurações de IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea/**
+
+# Arquivos do Android Studio
+*.apk
+*.ap_
+*.dex
+*.class
+
+# Arquivos de compilação Kotlin/Java
+*.jar
+*.war
+*.ear
+
+# Arquivos gerados
+*.class
+*.kt_generated/
+*.cxx/
+captures/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+
+# Cache de lint
+lint/intermediates/
+lint/generated/
+
+# NDK / CMake build outputs
+.externalNativeBuild/
+
+# Output do Compose Compiler
+.kotlintest/
+buildSrc/.gradle/
+
+# Arquivos do Jetifier
+.jetifier/
+
+# Configurações específicas do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações de ambiente do VS Code
+.vscode/
+
+# Node/npm cache (caso use KMP com JS)
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# WebAssembly outputs (para KMP targets JS/WASM)
+*.wasm
+*.js.map
+build/js/packages/
+
+# IntelliJ workspace-specific
+*.idea/workspace.xml
+*.idea/tasks.xml
+*.idea/dictionaries
+
+# Arquivos de cache de KMP multiplataforma
+**/bin/
+**/out/
+.metadata/
+*.kjsm
+*.kotlin_module
+*.hprof
+
+# Kotlin Native
+.konanc/
+*.klib
+*.knm
+*.konan/
+
+# Android test snapshots (Compose UI Test etc.)
+**/__snapshots__/
+
+# Google Services JSON (evite subir em prod)
+google-services.json
+
