@@ -15,7 +15,7 @@ kotlin = "2.0.0"
 mockk = "1.13.10"
 mockkAndroid = "1.13.10"
 playServicesAds = "24.4.0"
-runtimeAndroid = "1.8.3"            # OK, Compose UI 1.8.3
+runtimeAndroid = "1.8.3"
 turbine = "1.1.0"
 uiAndroid = "1.8.3"
 playServicesAdsApi = "24.4.0"
@@ -39,7 +39,6 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 
 androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "uiAndroid" }
@@ -60,8 +59,10 @@ turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 androidx-ui-test-junit4-android = { group = "androidx.compose.ui", name = "ui-test-junit4-android", version.ref = "uiTestJunit4" }
 
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
