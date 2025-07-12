@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AbMobApp"
 include(":app")
-include(":admoblibrary")
+include(":AdmobLibray")
