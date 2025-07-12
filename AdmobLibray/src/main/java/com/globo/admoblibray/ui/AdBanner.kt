@@ -17,8 +17,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.globo.admoblibrary.ui.BannerAdInternal
-import com.globo.admoblibrary.ui.InterstitialAdInternal
-import com.globo.admoblibrary.ui.RewardedAdInternal
 import com.globo.admoblibray.ad.AdViewModel
 import com.globo.admoblibray.model.AdEvent
 import com.globo.admoblibray.model.AdType
@@ -80,7 +78,7 @@ fun AdBanner(
         }
 
         if (adType is AdType.Interstitial) {
-            InterstitialAdInternal(adUnitId, onEvent = {
+            InterstitialAdInternal(adUnitId,onEvent = {
                 viewModel.update(it)
                 onEvent?.invoke(it)
             })
