@@ -4,9 +4,12 @@ plugins {
     alias(libs.plugins.compose.compiler)
 }
 
+
 android {
     namespace = "com.globo.admoblibray"
-    compileSdk = 34
+    compileSdk = 35
+    group = "com.github.maxDevAndroid"
+    version = "1.0.0"
 
     defaultConfig {
         minSdk = 24
