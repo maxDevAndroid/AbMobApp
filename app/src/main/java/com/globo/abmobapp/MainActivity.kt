@@ -40,8 +40,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun AbMobScreen() {
-        var isAdLoaded by remember { mutableStateOf(false) }
-        var adError by remember { mutableStateOf<String?>(null) }
+        val adError by remember { mutableStateOf<String?>(null) }
 
         Column(
             modifier = Modifier
