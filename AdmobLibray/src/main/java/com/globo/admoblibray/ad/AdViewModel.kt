@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class AdViewModel(private val adType: AdType) : ViewModel() {
+internal class AdViewModel(private val adType: AdType) : ViewModel() {
 
     private val _adState = MutableStateFlow<AdEvent>(AdEvent.Loading)
     val adState: StateFlow<AdEvent> = _adState.asStateFlow()

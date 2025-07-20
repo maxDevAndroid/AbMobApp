@@ -14,7 +14,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
 @Composable
-fun InterstitialAdInternal(
+internal fun InterstitialAdInternal(
     adUnitId: String,
     onEvent: (AdEvent) -> Unit
 ) {

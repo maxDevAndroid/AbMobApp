@@ -76,6 +76,57 @@ fun AdBanner(
 )
 ```
 
+Na aplicacao, fará a initialization startKoin dos modules.
+```kotlin
+class AdMobApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+
+        startKoin {
+            androidContext(this@AdMobApplication)
+            modules(AdMob.initKoinModules())
+        }
+        AdMob.initializeSdk(this)
+    }
+}
+```
+
+
+```kotlin
+val adManager: IAdMobManager = getKoin().get()
+```
+
+A partir daqui voce já consegue utilizar em seu contexto compose tendo customizado eventos, tipos com AdType e inserindo o seu adUnitId
+Simples e Prático.
+
+```kotlin
+adManager.init(
+    adUnitId = "addYourADunitIdHere",
+    adType = AdType.Banner,
+    modifier = Modifier,
+    onEvent = { event ->
+        when (event) {
+            is AdEvent.Loading -> Log.d("AdBanner", "Carregando...")
+            is AdEvent.Loaded -> {
+                Log.d("AdBanner", "Anúncio carregado")
+            }
+            is AdEvent.Failed -> {
+                Log.e("AdBanner", "Erro: ${event.message}")
+            }
+            AdEvent.Closed -> {
+                Log.d("AdBanner", "Fechado")
+            }
+            AdEvent.Opened -> {
+                Log.d("AdBanner", "Aberto")
+            }
+            else -> {}
+        }
+    }
+)
+```
+
+
+
 ### Tipos de Anúncio
 
 ```kotlin

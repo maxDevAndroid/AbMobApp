@@ -15,7 +15,7 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
 
 @Composable
-fun CustomAdInternal(
+internal fun CustomAdInternal(
     adUnitId: String,
     adSize: AdSize,
     onEvent: (AdEvent) -> Unit
