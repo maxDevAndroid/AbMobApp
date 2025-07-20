@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,9 +20,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.globo.admoblibray.ads.IAdMobManager
 import com.globo.admoblibray.model.AdEvent
 import com.globo.admoblibray.model.AdType
-import com.globo.admoblibray.ui.AdBanner
+import org.koin.compose.getKoin
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,20 +68,32 @@ class MainActivity : ComponentActivity() {
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            AdBanner(
+            val adManager: IAdMobManager = getKoin().get()
+
+            adManager.init(
                 adUnitId = BuildConfig.ADMOB_BANNER_ID,
                 adType = AdType.Banner,
+                modifier = Modifier,
                 onEvent = { event ->
                     when (event) {
                         is AdEvent.Loading -> Log.d("AdBanner", "Carregando...")
                         is AdEvent.Loaded -> {
                             Log.d("AdBanner", "Anúncio carregado")
-                            isAdLoaded = true
+                            // setState(true)
                         }
 
                         is AdEvent.Failed -> {
                             Log.e("AdBanner", "Erro: ${event.message}")
-                            adError = event.message
+                            // setError(event.message)
+                        }
+
+                        AdEvent.Closed -> {
+                            Log.d("AdBanner", "Fechado")
+                            // setState(false)
+                        }
+
+                        AdEvent.Opened -> {
+                            Log.d("AdBanner", "Aberto")
                         }
                     }
                 }

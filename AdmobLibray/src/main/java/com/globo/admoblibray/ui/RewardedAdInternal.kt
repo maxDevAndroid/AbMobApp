@@ -14,7 +14,7 @@ import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 
 @Composable
-fun RewardedAdInternal(
+internal fun RewardedAdInternal(
     adUnitId: String,
     onEvent: (AdEvent) -> Unit
 ) {

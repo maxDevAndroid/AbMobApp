@@ -1,4 +1,4 @@
-package com.globo.admoblibrary.ui
+package com.globo.admoblibray.ui
 
 
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,6 +9,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.globo.admoblibray.model.AdEvent
+import com.globo.admoblibray.util.AdListeners
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
@@ -16,9 +17,9 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
 
 @Composable
-fun BannerAdInternal(
+internal fun BannerAdInternal(
     adUnitId: String,
-    onEvent: (AdEvent) -> Unit
+    onEvent: (AdEvent) -> Unit,
 ) {
     AndroidView(
         modifier = Modifier

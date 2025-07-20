@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
-import com.globo.admoblibrary.ui.BannerAdInternal
 import com.globo.admoblibray.ad.AdViewModel
 import com.globo.admoblibray.model.AdEvent
 import com.globo.admoblibray.model.AdType
@@ -26,7 +25,7 @@ import org.koin.core.parameter.parametersOf
 
 
 @Composable
-fun AdBanner(
+internal fun AdBanner(
     adUnitId: String,
     adType: AdType = AdType.Banner,
     modifier: Modifier = Modifier,
@@ -63,6 +62,7 @@ fun AdBanner(
             .then(heightModifier),
         contentAlignment = Alignment.Center
     ) {
+
         if (adType is AdType.Banner) {
             BannerAdInternal(adUnitId, onEvent = {
                 viewModel.update(it)
